@@ -1,0 +1,40 @@
+name: Feature request
+description: Suggest an idea or enhancement for the openrouter-media MCP server
+title: "[Feature]: "
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting an improvement! Please check existing issues first
+        to avoid duplicates. Requests about OpenRouter itself belong with
+        [OpenRouter](https://openrouter.ai/docs).
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem / motivation
+      description: What problem are you trying to solve? Why does it matter?
+      placeholder: I'm trying to [...] but the server doesn't [...]
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed solution
+      description: Describe the tool, parameter, skill, or behavior you'd like to see.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Any alternative solutions or workarounds you've evaluated.
+    validations:
+      required: false
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional context
+      description: Add any other context, links, or examples about the request.
+    validations:
+      required: false

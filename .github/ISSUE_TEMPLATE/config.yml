@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: OpenRouter platform questions
+    url: https://openrouter.ai/docs
+    about: For questions about OpenRouter itself (models, billing, data policy), please use the OpenRouter docs/support. This repo is only for the openrouter-media MCP server.
+  - name: Model Context Protocol questions
+    url: https://modelcontextprotocol.io
+    about: For questions about MCP itself (the protocol, clients), see the MCP documentation.

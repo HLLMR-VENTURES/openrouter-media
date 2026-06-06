@@ -1,0 +1,87 @@
+name: Bug report
+description: Report a problem with the openrouter-media MCP server
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to file a bug report!
+
+        Before submitting, please:
+        - Search existing issues to avoid duplicates.
+        - **Redact all secrets** (API keys, tokens) from any config or logs you paste.
+        - Note that questions about OpenRouter itself (billing, model availability,
+          data policy) belong with [OpenRouter](https://openrouter.ai/docs).
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: A clear and concise description of the bug, including what you expected to happen instead.
+    validations:
+      required: true
+  - type: dropdown
+    id: tool
+    attributes:
+      label: Which tool?
+      options:
+        - list_media_models
+        - generate_image
+        - generate_video
+        - get_video
+        - generate_video_sync
+        - server startup / connection
+        - other / not sure
+    validations:
+      required: true
+  - type: input
+    id: model-id
+    attributes:
+      label: Model id used
+      description: The OpenRouter image/video model id (e.g. `google/veo-3.1-lite`).
+      placeholder: kwaivgi/kling-v3.0-std
+    validations:
+      required: false
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Minimal, step-by-step instructions to reproduce the behavior, including the tool arguments used (secrets redacted).
+      placeholder: |
+        1. Call generate_video_sync with { ... }
+        2. Observe ...
+    validations:
+      required: true
+  - type: input
+    id: server-version
+    attributes:
+      label: openrouter-media version
+      placeholder: e.g. 0.1.0
+    validations:
+      required: true
+  - type: input
+    id: client
+    attributes:
+      label: MCP client
+      description: Which MCP client/host are you using?
+      placeholder: e.g. Claude Code, Claude Desktop, custom
+    validations:
+      required: false
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant logs (stderr)
+      description: Paste any relevant stderr output. Rendered as code, so no backticks needed. **Redact your API key.**
+      render: shell
+    validations:
+      required: false
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: OS and Node.js version.
+      placeholder: |
+        - OS: Ubuntu 24.04
+        - Node: 20.11.0
+    validations:
+      required: true

@@ -1,0 +1,60 @@
+{
+  "name": "openrouter-media",
+  "version": "0.1.0",
+  "description": "MCP server exposing OpenRouter's image + async video generation as tools, bundled with companion SKILL.md skills that teach agents the creative workflows. Live model catalog, per-generation cost estimates, and a robust async video poll lifecycle.",
+  "type": "module",
+  "license": "MIT",
+  "author": "HLLMR",
+  "homepage": "https://github.com/HLLMR/openrouter-media#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HLLMR/openrouter-media.git"
+  },
+  "bugs": {
+    "url": "https://github.com/HLLMR/openrouter-media/issues"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "openrouter",
+    "image-generation",
+    "video-generation",
+    "text-to-video",
+    "image-to-video",
+    "ai-agent",
+    "skills",
+    "generative-media"
+  ],
+  "exports": {
+    ".": "./dist/index.js",
+    "./server": "./dist/server.js"
+  },
+  "bin": {
+    "openrouter-media": "./dist/server.js"
+  },
+  "files": [
+    "dist",
+    "skills",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "npm run clean && tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit",
+    "test": "tsc && node scripts/run-tests.mjs",
+    "start": "node dist/server.js",
+    "prepack": "npm run build"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^24.6.0",
+    "typescript": "^5.7.3"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
